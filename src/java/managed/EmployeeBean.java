@@ -31,8 +31,12 @@ public class EmployeeBean implements Serializable {
       EmployeeFacadeLocal employeeFacade;
     
     private String name;
+    private String firstname;
+    private String lastname;
     private String password;
+    private String jobTitle;
     private boolean isLogin;
+    private String account;
 
     public boolean getLogin() {
         return isLogin;
@@ -83,6 +87,42 @@ public class EmployeeBean implements Serializable {
       return "welcome";
       
     }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+    
+    
+    
+    
     
     public String createUser(String username,String password){
         

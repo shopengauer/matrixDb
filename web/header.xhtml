@@ -5,36 +5,32 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title> </title>
+             
     </h:head>
+    
     <h:body>
-          
-        <h:form id = "setLocale">
-            <h:commandLink action="#{localeBean.englishAction}">EN</h:commandLink>
-            <h:commandLink action="#{localeBean.germanAction}">DE</h:commandLink> 
-            <h:commandLink action="#{localeBean.russianAction}">RU</h:commandLink> 
-        </h:form> 
-        
-        <h:form>  
+ 
+         <h:form>
             
             <p:growl id="messages"/>
-
+   
             <p:menubar>
-                <p:submenu label="#{msgs.type}" icon="ui-icon-document">
+               
+                <p:submenu label="#{msgs.create}" icon="ui-icon-document">
                     <p:submenu label="New" icon="ui-icon-contact">
                         <p:menuitem value="Project" url="#" />
                         <p:menuitem value="Other" url="#" />
                     </p:submenu>
                     <p:menuitem value="Open" url="#" />
-                    <p:separator />
+                    <p:separator/>
                     <p:menuitem value="Quit" url="#" />
                 </p:submenu>
 
 
 
-                <p:submenu label="Edit" icon="ui-icon-pencil">
-                    <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                    <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                <p:submenu label="#{msgs.users}" icon="ui-icon-pencil">
+                    <p:menuitem value="#{msgs.add}" rendered="true" url="addUserClient.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="#{msgs.edit}" url="#" icon="ui-icon-arrowreturnthick-1-e" />
                 </p:submenu>
 
                 <p:submenu label="Help" icon="ui-icon-help">
@@ -57,28 +53,18 @@
                     </p:submenu>
                 </p:submenu>
 
-                <p:menuitem value="Quit" url="http://www.matritca.ru" icon="ui-icon-close" />
+                <p:submenu label="#{msgs.lang}" icon="ui-icon-close">
+                    <p:menuitem value ="#{msgs.rus}" ajax="false" action="#{localeBean.russianAction}"/>
+                    <p:menuitem value ="#{msgs.eng}" ajax="false" action="#{localeBean.englishAction}"/>
+                </p:submenu>
+               
+               
 
-                <f:facet name="options">
-                  
-                    <p:outputLabel  for="name" value="#{msgs.uname}"/> 
-                    <p:inputText id ="name" value="#{employeeBean.name}" required="true" placeholder="#{msgs.uname}"/> 
-                    <p:outputLabel for="password" value="#{msgs.pw}"/>
-                    <p:password id ="password" value ="#{employeeBean.password}" required="true" placeholder="#{msgs.pw}"/> 
-                    <p:commandButton label="Command" value="Login" id="submitBut" action="#{employeeBean.UserValidate(employeeBean.name, employeeBean.password)}" icon="ui-icon-circle-check"/> 
-                
-                </f:facet>
-
-                <f:facet name="options">
-                    
-                        
-                     
-                   
-                    <!--            <p:inputText style="margin-right:10px" placeholder="Search"/>-->
-                    <!--<p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />-->
-                </f:facet>
-            </p:menubar>
-        </h:form>
+                </p:menubar>
+             </h:form>
+            
+           
+        
     </h:body>
 </html>
 

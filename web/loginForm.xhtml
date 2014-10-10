@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+       
+    </h:head>
+    <h:body>
+       
+        <h:form> 
+         
+            <h:panelGrid columns="2" cellspacing="5" cellpadding="5">
+                
+                <p:outputLabel for="username" value="#{msgs.uname}"/>
+                <p:inputText size="15" id ="username" value="#{employeeBean.name}" required="true" placeholder="#{msgs.uname}"/> 
+                              
+                <p:outputLabel  for="password" value="#{msgs.pw}"/>
+                <p:password  size = "15" id ="password" value ="#{employeeBean.password}" required="true" placeholder="#{msgs.pw}"/> 
+                  
+                <p:commandButton value="#{msgs.login}" id="submitBut" ajax="false" action="#{employeeBean.UserValidate(employeeBean.name, employeeBean.password)}" icon="ui-icon-circle-check"/> 
+            </h:panelGrid>
+         
+        </h:form>
+    
+    </h:body>
+</html>
+

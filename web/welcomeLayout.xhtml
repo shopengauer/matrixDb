@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!--<h:outputStylesheet name="./css/default.css"/>-->
+        <!--<h:outputStylesheet name="./css/cssLayout.css"/>-->
+        <title>My server</title>
+    </h:head>
+
+    <h:body>
+ 
+        <p:layout fullPage="true" onClose="true">
+            
+            <p:layoutUnit position="north" size="800" header="DService">
+                <ui:insert name="top">
+                    <ui:include src = "header.xhtml"/>
+                </ui:insert>
+                
+                    <ui:insert name="login">
+                        <div style="float: right; margin: 40px;">  
+                            <ui:include src = "loginForm.xhtml"/>
+                        </div>  
+                    </ui:insert> 
+                
+                
+                <div style="float: left; margin: 10px;">  
+                    <ui:insert name="addUser">
+                    
+                    </ui:insert> 
+                </div>  
+           
+            
+            
+            </p:layoutUnit>
+             
+            <p:layoutUnit position="center" header="Output">
+                 <ui:insert name="top">center</ui:insert>
+            </p:layoutUnit>
+           
+<!--           
+            <p:layoutUnit position="west">
+            <ui:insert name="left">West  </ui:insert>
+           
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="east">
+                 <ui:insert name="left">East</ui:insert>
+           
+            </p:layoutUnit>
+          
+            
+            <p:layoutUnit position="center" header="Center">
+                 <ui:insert name="top">center</ui:insert>
+            </p:layoutUnit>-->
+            
+              
+          
+            
+            
+            
+            
+            
+            
+        </p:layout>
+           
+<!--        </div>
+
+
+
+        <div id="left">
+            <ui:insert name="left"><ui:include src = "login.xhtml"/></ui:insert>
+        </div>
+
+
+        <div id="right">
+            <ui:insert name="right">Right gnfgbgfb fgbfgbfgb fbfgbfgbfgb</ui:insert>
+        </div>
+
+
+        <div id="bottom">
+            <ui:insert name="bottom">Bottom</ui:insert>
+        </div>-->
+
+    </h:body>
+ 
+</html>

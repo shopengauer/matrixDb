@@ -1,0 +1,40 @@
+<!--<?xml version='1.0' encoding='UTF-8' ?>-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            
+            <h:panelGrid columns="2" cellspacing="5" cellpadding="5">
+                <p:outputLabel value="#{msgs.firstname}" for = "firstname"/>
+                <p:inputText id = "firstname" value = "#{employeeBean.firstname}"  placeholder="#{msgs.firstname}"/>
+                
+                 <p:outputLabel value="#{msgs.lastname}" for = "lastname"/>
+                <p:inputText id = "lastname" value = "#{employeeBean.lastname}"  placeholder="#{msgs.lastname}"/>
+                
+                <p:outputLabel value="#{msgs.jobtitle}" for = "jobtitle"/>
+                <p:inputText id = "jobtitle" value = "#{employeeBean.jobTitle}"  placeholder="#{msgs.jobtitle}"/>
+                
+                <p:outputLabel value="#{msgs.account}" for = "account"/>
+                <p:inputText id = "account" value = "#{employeeBean.account}"  placeholder="#{msgs.account}"/>
+                
+                
+                
+                 
+              
+            </h:panelGrid>
+            
+            
+        </h:form>
+     
+    </h:body>
+      
+</html>
+

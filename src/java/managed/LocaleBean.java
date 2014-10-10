@@ -7,6 +7,7 @@ package managed;
 
 import java.io.Serializable;
 import java.util.Locale;
+import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -22,35 +23,38 @@ public class LocaleBean implements Serializable{
     /**
      * Creates a new instance of AppSet
      */
-     private String currentLanguge;
+     
+     private Locale locale; 
+     
+     
+     public LocaleBean() {
+       }
     
-    public LocaleBean() {
-    }
-    
+     
+      @PostConstruct
+      private void init(){
+          locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
+       }         
+     
+     
     public String englishAction(){
-        FacesContext context = FacesContext.getCurrentInstance();
-        context.getViewRoot().setLocale(Locale.ENGLISH);
-        currentLanguge = "English";
-       return null;    
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        facesContext.getViewRoot().setLocale(Locale.ENGLISH);
+        locale = new Locale("en");
+        return null;
     }
+   
+    
     public String russianAction(){
-       FacesContext context = FacesContext.getCurrentInstance();
-       context.getViewRoot().setLocale(new Locale("ru"));
-       currentLanguge = "Russian"; 
+       FacesContext facesContext = FacesContext.getCurrentInstance();
+       facesContext.getViewRoot().setLocale(new Locale("ru"));
+       locale = new Locale("ru");
        return null;    
     }
      
-    public String getCurrentLanguge() {
-         FacesContext.getCurrentInstance().getViewRoot().setLocale(Locale.ENGLISH);
-        Locale locale= FacesContext.getCurrentInstance().getViewRoot().getLocale();
-        return locale.getLanguage();
-    }
-
-    public void setCurrentLanguge(String currentLanguge) {
-       
-        FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("RU"));   
-        
-        this.currentLanguge = currentLanguge;
-    }
     
+    public Locale getLocale() {
+        return locale;
+    }
+   
 }

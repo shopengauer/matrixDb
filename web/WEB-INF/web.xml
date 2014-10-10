@@ -14,7 +14,7 @@
     </context-param>
     <context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>glass-x</param-value>
+		<param-value>cupertino</param-value>
 	</context-param>
     
     
@@ -33,7 +33,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-         <!--<welcome-file>newTemplateClient.xhtml</welcome-file>-->
-        <welcome-file>mainLayout.xhtml</welcome-file>
+         <welcome-file>welcomeLayout.xhtml</welcome-file>
+        
     </welcome-file-list>
 </web-app>
