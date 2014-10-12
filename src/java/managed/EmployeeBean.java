@@ -9,8 +9,13 @@ import entity.Employee;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 import javax.transaction.UserTransaction;
 import org.primefaces.context.RequestContext;
 import session.EmployeeFacade;
@@ -34,10 +39,57 @@ public class EmployeeBean implements Serializable {
     private String firstname;
     private String lastname;
     private String password;
+   
     private String jobTitle;
     private boolean isLogin;
     private String account;
+    private String department;
+    private List<SelectItem> selectItem;
+    
+    
+    private List<String> departments;
 
+    @PostConstruct
+    void initDepartments(){
+       
+      // SelectItem[] selectItem = new SelectItem[]{new SelectItem("ПТО", "ПТО"),new SelectItem("Цех", "Цех")};
+        
+        selectItem = new ArrayList<>();
+        selectItem.add(new SelectItem("PTO", "PTO"));
+        selectItem.add(new SelectItem("Ceh", "Ceh"));
+       
+        
+        this.departments = new ArrayList<>();
+        departments.add("A");
+        departments.add("B");
+        departments.add("C");
+        departments.add("ПТО");
+        departments.add("E");
+        departments.add("F");
+    }
+
+    public List<SelectItem> getSelectItem() {
+        return selectItem;
+    }
+  
+    
+    public Collection<String> getDepartments() {
+        return departments;
+    }
+
+    
+    
+    
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+    
+   
+    
     public boolean getLogin() {
         return isLogin;
     }

@@ -1,4 +1,4 @@
-<!--<?xml version='1.0' encoding='UTF-8' ?>-->
+ <!--<?xml version='1.0' encoding='UTF-8' ?>--> 
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -7,31 +7,51 @@
    
     <h:head>
         <title>Facelet Title</title>
+        <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>-->
     </h:head>
+    
     <h:body>
         
         <h:form>
+            <!--<p:panel id ="panel" header="New user" >--> 
+            <!--<h:outputFormat>Введите ваши данные</h:outputFormat>-->
+            <!--<p:messages id="messages" showDetail="true" autoUpdate="true" />-->
+            <p:message id="messageFn" for="department" showDetail="true" showSummary="true" />
             
-            <h:panelGrid columns="2" cellspacing="5" cellpadding="5">
+            <h:panelGrid columns="2" cellspacing="5" cellpadding="5" style="background-color: #ececec;">
                 <p:outputLabel value="#{msgs.firstname}" for = "firstname"/>
-                <p:inputText id = "firstname" value = "#{employeeBean.firstname}"  placeholder="#{msgs.firstname}"/>
+                <p:inputText id = "firstname" value = "#{employeeBean.firstname}" required="true">
+                    
+                </p:inputText>
                 
                  <p:outputLabel value="#{msgs.lastname}" for = "lastname"/>
-                <p:inputText id = "lastname" value = "#{employeeBean.lastname}"  placeholder="#{msgs.lastname}"/>
+                <p:inputText id = "lastname" value = "#{employeeBean.lastname}" required="true"/>
                 
                 <p:outputLabel value="#{msgs.jobtitle}" for = "jobtitle"/>
-                <p:inputText id = "jobtitle" value = "#{employeeBean.jobTitle}"  placeholder="#{msgs.jobtitle}"/>
+                <p:inputText id = "jobtitle" value = "#{employeeBean.jobTitle}" required="true"/>
                 
                 <p:outputLabel value="#{msgs.account}" for = "account"/>
-                <p:inputText id = "account" value = "#{employeeBean.account}"  placeholder="#{msgs.account}"/>
-                
-                
-                
+                <p:inputText id = "account" value = "#{employeeBean.account}" required="true"/>
+ 
+                <p:outputLabel for="department" value="#{msgs.department}" />
+                <p:selectOneMenu id="department" value="#{employeeBean.department}"  required="false" effect="fold">
+                    <!--<f:selectItem />-->
+                    <f:selectItems value="#{employeeBean.departments}" var = "w" itemLabel="#{w}" itemValue="#{w}"/>
+                                       
+                </p:selectOneMenu>
                  
-              
+                <h:outputLabel  value="#{msgs.pw} 1: *" for="pwd1"/>
+                <p:password id="pwd1" value="#{employeeBean.password}" goodLabel="#{msgs.goodLabel}" weakLabel="#{msgs.weakLabel}" strongLabel="#{msgs.strongLabel}" 
+                            redisplay="true" promptLabel="#{msgs.pwenter}" match="pwd2" label="Password 1" required="true" feedback="true"/>
+
+                <h:outputLabel  value="#{msgs.pw} 2: *" for="pwd2"/>
+                <p:password id="pwd2" value="#{employeeBean.password}" label="Password 2" required="true"/>
+                
+                <p:commandButton value="Ввод" id="submit" ajax="false" action="#" icon="ui-icon-circle-check"/>  
+            
+            
             </h:panelGrid>
-            
-            
+          <!--</p:panel>-->
         </h:form>
      
     </h:body>

@@ -10,18 +10,18 @@
     <h:body>
        
         <h:form> 
-         
+            <p:panel header="Login">
             <h:panelGrid columns="2" cellspacing="5" cellpadding="5">
                 
-                <p:outputLabel for="username" value="#{msgs.uname}"/>
-                <p:inputText size="15" id ="username" value="#{employeeBean.name}" required="true" placeholder="#{msgs.uname}"/> 
+                <p:outputLabel for="username" value="#{msgs.account}"/>
+                <p:inputText size="15" autocomplete="true" id ="username" value="#{employeeBean.account}" required="true" placeholder="#{msgs.account}"/> 
                               
                 <p:outputLabel  for="password" value="#{msgs.pw}"/>
                 <p:password  size = "15" id ="password" value ="#{employeeBean.password}" required="true" placeholder="#{msgs.pw}"/> 
                   
                 <p:commandButton value="#{msgs.login}" id="submitBut" ajax="false" action="#{employeeBean.UserValidate(employeeBean.name, employeeBean.password)}" icon="ui-icon-circle-check"/> 
             </h:panelGrid>
-         
+         </p:panel>
         </h:form>
     
     </h:body>

@@ -13,9 +13,25 @@
         <param-value>ghjdthrf</param-value>
     </context-param>
     <context-param>
-		<param-name>primefaces.THEME</param-name>
-		<param-value>cupertino</param-value>
-	</context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>cupertino</param-value>
+    </context-param>
+    
+<!--    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>filters.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>requestEncoding</param-name>
+            <param-value>UTF-8</param-value>
+          </init-param>
+    
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+     
+     
     
     
     <servlet>
@@ -33,7 +49,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-         <welcome-file>welcomeLayout.xhtml</welcome-file>
-        
+        <welcome-file>welcomeLayout.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>

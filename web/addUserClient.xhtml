@@ -5,15 +5,31 @@
     <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                     template="./welcomeLayout.xhtml">
 
+        
+        
+        <ui:define name="top">
+             
+            <!--<ui:include src="addUserForm.xhtml"/>-->
+             
+        </ui:define>
+        
+        
         <ui:define name="addUser">
              
             <ui:include src="addUserForm.xhtml"/>
              
         </ui:define>
+ 
+<!--        
+        <ui:define name="addUser">
+             
+            <ui:include src="addUserForm.xhtml"/>
+             
+        </ui:define>-->
 
-        <ui:define name="login">
+<!--        <ui:define name="login">
            
-        </ui:define>
+        </ui:define>-->
         
         
     </ui:composition>
